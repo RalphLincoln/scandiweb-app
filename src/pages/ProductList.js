@@ -81,6 +81,11 @@ const ProductList = ()  => {
                     })
                 }
             </div>
+
+            <div className="h-2 absolute left-0 right-0 bottom-28">
+                <hr className="mt-14" />
+                <p className="text-xs text-center mt-3">Scandiweb Test Assignment</p>
+            </div>
         </div>
     )
 }
