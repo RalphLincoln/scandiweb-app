@@ -43,11 +43,12 @@ const ProductList = ()  => {
     }
 
     const massDelete = () => {
+        setProduct([])
         axios.post("https://scandiweb-restapi.herokuapp.com/api/delete.php", {
             selected }, { headers })
             .then(res => {
                 console.log(res.data)
-                setCheckDelete("delete");
+                //setCheckDelete("delete");
             })
             .catch(err => {
                 console.error(err)
