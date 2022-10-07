@@ -48,7 +48,7 @@ const ProductList = ()  => {
             selected }, { headers })
             .then(res => {
                 console.log(res.data)
-                setCheckDelete("delete");
+                //setCheckDelete("delete");
             })
             .catch(err => {
                 console.error(err)
