@@ -8,7 +8,7 @@ import Card from "../component/Card";
 const ProductList = ()  => {
     const [product, setProduct] = useState([])
     const [selected, setSelected] = useState([])
-    const [checkDelete, setCheckDelete] = useState("");
+    //const [checkDelete, setCheckDelete] = useState("");
     const navigate = useNavigate();
     const [checkedState, setCheckedState] = useState([]);
 
@@ -21,7 +21,7 @@ const ProductList = ()  => {
             .catch(err => {
                 console.error(err)
             })
-    }, [checkDelete])
+    }, [])
 
     const handleOnChange = (position, id) => {
         const updatedCheckedState = checkedState.map((item, index) =>
