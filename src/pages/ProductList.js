@@ -7,7 +7,7 @@ import Card from "../component/Card";
 
 const ProductList = ()  => {
     const [product, setProduct] = useState([])
-    const [selected, setSelected] = useState([])
+    //const [selected, setSelected] = useState([])
     const [checkDelete, setCheckDelete] = useState("");
     const navigate = useNavigate();
     const [checkedState, setCheckedState] = useState([]);
@@ -23,19 +23,22 @@ const ProductList = ()  => {
             })
     }, [checkDelete])
 
-    const handleOnChange = (position, id) => {
+
+    const handleOnChange = (position, id, event) => {
+
+        //console.log(event)
         const updatedCheckedState = checkedState.map((item, index) =>
             index === position ? !item : item
         );
 
         setCheckedState(updatedCheckedState);
-        if (updatedCheckedState[position]) {
+        /*if (updatedCheckedState[position]) {
             setSelected(oldArray => [...oldArray, id])
         } else {
             setSelected(oldArray => {
                 return oldArray.filter((value, i) => value !== id)
             })
-        }
+        }*/
     }
 
     const headers = {
@@ -43,6 +46,18 @@ const ProductList = ()  => {
     }
 
     const massDelete = () => {
+        const checkboxes = document.getElementsByClassName('delete-checkbox');
+        /*for (let i=0; i<checkboxes.length;i++){
+            checkboxes[i].checked=true;
+        }*/
+        let selected = []
+        for (let i=0; i<checkboxes.length;i++){
+            console.log(checkboxes[i].checked)
+            if (checkboxes[i].checked) {
+                selected.push(checkboxes[i].name)
+            }
+        }
+        console.log(selected, "selected_2")
         axios.post("https://scandiweb-restapi.herokuapp.com/api/delete.php", {
             selected }, { headers })
             .then(res => {
@@ -52,6 +67,7 @@ const ProductList = ()  => {
             .catch(err => {
                 console.error(err)
             })
+
     }
 
     return (

@@ -13,7 +13,7 @@ const Card = (props) => {
                 type="checkbox"
                 checked={ checkedState[index] }
                 className="delete-checkbox ml-4 mt-4"
-                onChange={ () => handler(index, sc_sku) }
+                onChange={ (e) => handler(index, sc_sku, e) }
             />
             <div className="min-h-70 aspect-w-1 aspect-h-1 w-full group-hover:opacity-75 lg:aspect-none h-48 flex justify-center items-center">
                 <div className="px-2">
