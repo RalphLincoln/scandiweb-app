@@ -1,11 +1,8 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 
 import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
-
-import { Listbox, Transition } from '@headlessui/react';
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
 
 const types = [
@@ -31,11 +28,7 @@ const ProductAdd = () => {
     const [showError, setShowError] = useState(false);
     const [warning, setWarning] = useState("");
     const [showWarning, setShowWarning] = useState(false);
-
-
-    const classNames = (...classes) => {
-        return classes.filter(Boolean).join(' ');
-    }
+    
 
     if (showWarning) {
         setTimeout(() => {
