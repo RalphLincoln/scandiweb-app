@@ -136,15 +136,22 @@ const ProductAdd = () => {
 
                     <div className="flex flex-row gap items-center mb-5 sm:mb-7">
                         <label className='basis-4/12 sm:basis-3/12 text-sm' htmlFor="sku">Type Switcher</label>
-                        <Listbox id="productType" className="w-full" onChange={ setSelected }>
-                            {({ open }) => (
+                        <select id="productType" value={ selected } onChange={ (e) => setSelected(e.target.value)}
+                                className="border basis-10/12 lg:basis-10/12 h-8 text-sm focus:border-indigo-500 focus:outline-none pl-3 pr-3 rounded-lg w-full">
+                            <option id="DVD">DVD</option>
+                            <option id="Furniture">Furniture</option>
+                            <option id="Book">Book</option>
+                        </select>
+                        {/*<Listbox id="productType" className="w-full" onChange={setSelected}>
+                            {({open}) => (
                                 <div className="relative mt-1">
-                                    <Listbox.Button className="w-full flex justify-between cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-3 text-left focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm">
+                                    <Listbox.Button
+                                        className="w-full flex justify-between cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-3 text-left focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm">
                                         <span className="items-center">
-                                            <span className="block truncate">{ selected }</span>
+                                            <span className="block truncate">{selected}</span>
                                         </span>
                                         <span className="pointer-events-none ml-3 flex items-center">
-                                            <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                                            <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true"/>
                                         </span>
                                     </Listbox.Button>
 
@@ -155,24 +162,26 @@ const ProductAdd = () => {
                                         leaveFrom="opacity-100"
                                         leaveTo="opacity-0">
 
-                                        <Listbox.Options className="absolute z-10 mt-1 max-h-56 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                                        <Listbox.Options
+                                            className="absolute z-10 mt-1 max-h-56 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                                             {
                                                 types.map(tt => (
                                                     <Listbox.Option
-                                                        key={ tt }
-                                                        className={({ active }) =>
+                                                        key={tt}
+                                                        className={({active}) =>
                                                             classNames(
                                                                 active ? 'text-white bg-indigo-600' : 'text-gray-900',
                                                                 'relative cursor-default select-none py-2 pl-3 pr-9'
                                                             )
                                                         }
-                                                        value={ tt }>
+                                                        value={tt}>
 
-                                                        {({ selected, active }) => (
+                                                        {({selected, active}) => (
                                                             <>
                                                                 <div className="flex items-center">
-                                                                <span className={classNames(selected ? 'font-semibold' : 'font-normal', 'ml-3 block truncate')}>
-                                                                    { tt }
+                                                                <span
+                                                                    className={classNames(selected ? 'font-semibold' : 'font-normal', 'ml-3 block truncate')}>
+                                                                    {tt}
                                                                 </span>
                                                                 </div>
 
@@ -182,7 +191,8 @@ const ProductAdd = () => {
                                                                             active ? 'text-white' : 'text-indigo-600',
                                                                             'absolute inset-y-0 right-0 flex items-center pr-4'
                                                                         )}>
-                                                                        <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                                                                        <CheckIcon className="h-5 w-5"
+                                                                                   aria-hidden="true"/>
                                                                 </span>
                                                                 ) : null}
                                                             </>
@@ -195,7 +205,7 @@ const ProductAdd = () => {
                                     </Transition>
                                 </div>
                             )}
-                        </Listbox>
+                        </Listbox> */}
                     </div>
 
 
