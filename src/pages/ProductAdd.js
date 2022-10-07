@@ -28,7 +28,7 @@ const ProductAdd = () => {
     const [showError, setShowError] = useState(false);
     const [warning, setWarning] = useState("");
     const [showWarning, setShowWarning] = useState(false);
-    
+
 
     if (showWarning) {
         setTimeout(() => {
